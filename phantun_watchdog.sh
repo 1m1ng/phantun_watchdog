@@ -29,6 +29,7 @@ fi
 
 if [ ! -f "$IP_FILE" ]; then
   # 首次运行，记录当前 IP 并退出
+  touch "$IP_FILE"
   echo "$CURRENT_IP" > "$IP_FILE"
   echo "首次运行，记录当前 IP: $CURRENT_IP"
   exit 0
