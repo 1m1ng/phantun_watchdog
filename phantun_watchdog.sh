@@ -3,7 +3,7 @@
 # --- 配置部分 ---
 DOMAIN="1m1ng.top"  # 你要检测的域名，请替换为你的域名
 SERVICE_NAME="phantun-client"     # phantun 服务的 systemd 服务名称，请替换为你的实际服务名
-IP_FILE="/opt/phantun/current_ip.txt" # 存储当前IP的文件路径
+IP_FILE="/opt/phantun_current_ip.txt" # 存储当前IP的文件路径
 
 get_current_ip() {
   # 使用 dig 命令获取域名的 A 记录 IP 地址
@@ -29,7 +29,6 @@ fi
 
 if [ ! -f "$IP_FILE" ]; then
   # 首次运行，记录当前 IP 并退出
-  touch "$IP_FILE"
   echo "$CURRENT_IP" > "$IP_FILE"
   echo "首次运行，记录当前 IP: $CURRENT_IP"
   exit 0
