@@ -1,7 +1,7 @@
 下载文件
 
 ```bash
-curl https://git.1m1ng.top/Huiji/phantun_watchdog/raw/branch/main/phantun_watchdog.sh /usr/local/bin/phantun_watchdog
+curl https://git.1m1ng.top/Huiji/phantun_watchdog/raw/branch/main/phantun_watchdog.sh -o /usr/local/bin/phantun_watchdog
 ```
 
 给予权限
