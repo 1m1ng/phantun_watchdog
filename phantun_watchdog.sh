@@ -6,8 +6,8 @@ SERVICE_NAME="phantun-client"     # phantun 服务的 systemd 服务名称，请
 IP_FILE="/opt/phantun_current_ip.txt" # 存储当前IP的文件路径
 
 get_current_ip() {
-  # 使用 dig 命令获取域名的 A 记录 IP 地址
-  CURRENT_IP=$(dig +short A "$DOMAIN" 2>/dev/null)
+  # 使用 resolveip 命令获取域名的 A 记录 IP 地址
+  CURRENT_IP=$(resolveip "$DOMAIN" 2>/dev/null)
 
   if [ -z "$CURRENT_IP" ]; then
     echo "ERROR: Failed to resolve domain '$DOMAIN'."
