@@ -13,5 +13,5 @@ chmod +x /usr/local/bin/phantun_watchdog
 写入到crond中
 
 ```bash
-echo '* * * * * /usr/local/bin/phantun_watchdog' >> /etc/crontab
+echo '* * * * * root /usr/local/bin/phantun_watchdog' >> /etc/crontab
 ```
