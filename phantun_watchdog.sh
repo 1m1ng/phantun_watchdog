@@ -7,7 +7,7 @@ IP_FILE="/opt/phantun_current_ip.txt" # 存储当前IP的文件路径
 
 get_current_ip() {
   # 使用 resolveip 命令获取域名的 A 记录 IP 地址
-  CURRENT_IP=$(resolveip "$DOMAIN" 2>/dev/null)
+  CURRENT_IP=$(getent ahostsv4 "$DOMAIN" | awk 'NR==1 {print $1}')
 
   if [ -z "$CURRENT_IP" ]; then
     echo "ERROR: Failed to resolve domain '$DOMAIN'."
